@@ -126,3 +126,22 @@ Learn more about the power of Turborepo:
 Learn more about shadcn/ui:
 
 - [Documentation](https://ui.shadcn.com/docs)
+
+## Documentation
+
+The project documentation is built using MkDocs within a Docker container and can be found in the `apps/docs` directory.
+
+To work with the documentation:
+
+1. Ensure you have Docker installed on your system.
+2. Navigate to the docs directory: `cd apps/docs`
+3. Run the development server: `npm run dev`
+4. Build the documentation: `npm run build`
+
+You can also use the following commands from the root directory:
+
+- `npm run dev:docs`: Start the documentation development server
+- `npm run build:docs`: Build the documentation
+- `npm run start:docs`: Serve the built documentation
+
+The documentation will be available at `http://localhost:8000` when running the dev or start commands.
