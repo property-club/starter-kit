@@ -1,5 +1,10 @@
-import Hero from "~/components/Hero";
+import { Button } from "@repo/ui/components/ui/button";
 
 export default function Page() {
-  return <Hero />;
+  return (
+    <main className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="mb-4 text-2xl font-bold">Docs</h1>
+      <Button>Click me</Button>
+    </main>
+  );
 }
