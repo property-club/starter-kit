@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// can we make this dynamic? or better yet, can we move this file somewhere else? and 
+// select one dynamically based on the environment?
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int      @id @default(autoincrement())
+  username      String   @unique
+  walletAddress String   @unique
+  createdAt     DateTime @default(now())
+  authenticated Boolean  @default(false)
+
+  // Relations
+  ownedInviteCodes InviteCode[] @relation("InviteCodeOwner")
+  usedInviteCodes  InviteCode[] @relation("InviteCodeUsedBy")
+  referralsGiven   Referral[]   @relation("Referrer")
+  referralReceived Referral[]   @relation("Referred")
+}
+
+model InviteCode {
+  code         String   @id
+  ownerUserId  Int
+  isUsed       Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  usedByUserId Int?
+
+  // Relations
+  owner  User  @relation("InviteCodeOwner", fields: [ownerUserId], references: [id])
+  usedBy User? @relation("InviteCodeUsedBy", fields: [usedByUserId], references: [id])
+
+  @@index([ownerUserId])
+  @@index([usedByUserId])
+}
+
+model Referral {
+  id             Int      @id @default(autoincrement())
+  referrerUserId Int
+  referredUserId Int
+  createdAt      DateTime @default(now())
+
+  // Relations
+  referrer User @relation("Referrer", fields: [referrerUserId], references: [id])
+  referred User @relation("Referred", fields: [referredUserId], references: [id])
+
+  @@unique([referrerUserId, referredUserId])
+  @@index([referrerUserId])
+  @@index([referredUserId])
+}
