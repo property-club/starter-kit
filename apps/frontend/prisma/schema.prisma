@@ -8,8 +8,9 @@ generator client {
 // can we make this dynamic? or better yet, can we move this file somewhere else? and 
 // select one dynamically based on the environment?
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
 model User {
