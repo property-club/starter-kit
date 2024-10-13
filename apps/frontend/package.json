@@ -16,7 +16,6 @@
     "start": "next start",
     "lint": "eslint . --max-warnings 0"
   },
-  "postinstall": "npx prisma generate",
   "dependencies": {
     "@prisma/client": "5.20.0",
     "@radix-ui/react-icons": "^1.3.0",
