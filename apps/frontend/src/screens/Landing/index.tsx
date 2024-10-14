@@ -1,7 +1,6 @@
 "use client";
 
-import { Button } from "@repo/ui/components/ui/button";
-import Link from "next/link";
+import { Button, buttonVariants } from "@repo/ui/components/ui/button";
 import { HeroCards } from "./components/HeroCards";
 
 const Hero = () => {
@@ -29,6 +28,7 @@ const Hero = () => {
           to your project.
         </p>
 
+<<<<<<< HEAD
         <div className="space-y-4 space-x-2 md:space-y-0 md:space-x-4">
           <Button
             variant="default"
@@ -36,6 +36,18 @@ const Hero = () => {
             onClick={() => {
               /* Add sign-up logic here */
             }}
+=======
+        <div className="space-y-4 md:space-y-0 md:space-x-4">
+          <ConnectWalletButton />
+          <Separator className="" />
+          <a
+            rel="noreferrer noopener"
+            href="https://github.com/leoMirandaa/shadcn-landing-page.git"
+            target="_blank"
+            className={`w-full md:w-1/3 ${buttonVariants({
+              variant: "outline",
+            })}`}
+>>>>>>> origin/main
           >
             Sign Up
           </Button>
@@ -45,11 +57,6 @@ const Hero = () => {
             </Button>
           </Link>
         </div>
-      </div>
-
-      {/* Hero cards sections */}
-      <div className="z-10">
-        <HeroCards />
       </div>
 
       {/* Shadow effect */}
