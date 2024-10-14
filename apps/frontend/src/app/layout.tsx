@@ -2,8 +2,8 @@ import "@repo/ui/globals.css";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Inter } from "next/font/google";
-import { Web3Provider } from "~/modules/blockchain";
-import { getConfig } from "~/modules/blockchain";
+import { Web3Provider } from "~/modules/wallet";
+import { getConfig } from "~/modules/wallet";
 import { cookieToInitialState } from "wagmi";
 
 const inter = Inter({ subsets: ["latin"] });
