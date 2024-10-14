@@ -1,9 +1,8 @@
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
+"use client";
 
-import { Button, buttonVariants } from "@repo/ui/components/ui/button";
-
-import { ConnectWalletButton } from "~/modules/wallet";
-import { Separator } from "@repo/ui/components/ui/separator";
+import { Button } from "@repo/ui/components/ui/button";
+import { HeroCards } from "./components/HeroCards";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -30,21 +29,27 @@ const Hero = () => {
           to your project.
         </p>
 
-        <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <ConnectWalletButton />
-          <Separator className="" />
-          <a
-            rel="noreferrer noopener"
-            href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-            target="_blank"
-            className={`w-full md:w-1/3 ${buttonVariants({
-              variant: "outline",
-            })}`}
+        <div className="space-y-4 space-x-2 md:space-y-0 md:space-x-4">
+          <Button
+            variant="default"
+            size="lg"
+            onClick={() => {
+              /* Add sign-up logic here */
+            }}
           >
-            Github Repository
-            <GitHubLogoIcon className="ml-2 w-5 h-5" />
-          </a>
+            Sign Up
+          </Button>
+          <Link href="/dashboard" passHref>
+            <Button size="lg" variant="outline">
+              Sign In
+            </Button>
+          </Link>
         </div>
+      </div>
+
+      {/* Hero cards sections */}
+      <div className="z-10">
+        <HeroCards />
       </div>
 
       {/* Shadow effect */}
