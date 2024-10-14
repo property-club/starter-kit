@@ -21,6 +21,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
 
+  apps/contracts: {}
+
   apps/docs:
     dependencies:
       '@radix-ui/react-icons':
@@ -148,6 +150,8 @@ importers:
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
+
+  apps/subgraph: {}
 
   packages/eslint-config:
     devDependencies:
