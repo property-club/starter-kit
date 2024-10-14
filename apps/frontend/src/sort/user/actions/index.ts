@@ -4,7 +4,7 @@
 
 // import { prisma } from "@/lib/prisma";
 import { User } from "@prisma/client";
-import prisma from "~/modules/db";
+import prisma from "../../../modules/database";
 
 // Type Definitions
 interface CreateUserInput {

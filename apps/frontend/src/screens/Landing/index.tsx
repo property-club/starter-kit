@@ -1,7 +1,9 @@
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 import { Button, buttonVariants } from "@repo/ui/components/ui/button";
-import { HeroCards } from "./HeroCards";
+
+import { ConnectWalletButton } from "~/modules/wallet";
+import { Separator } from "@repo/ui/components/ui/separator";
 
 const Hero = () => {
   return (
@@ -29,8 +31,8 @@ const Hero = () => {
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-1/3">Get Started</Button>
-
+          <ConnectWalletButton />
+          <Separator className="" />
           <a
             rel="noreferrer noopener"
             href="https://github.com/leoMirandaa/shadcn-landing-page.git"
@@ -43,11 +45,6 @@ const Hero = () => {
             <GitHubLogoIcon className="ml-2 w-5 h-5" />
           </a>
         </div>
-      </div>
-
-      {/* Hero cards sections */}
-      <div className="z-10">
-        <HeroCards />
       </div>
 
       {/* Shadow effect */}
