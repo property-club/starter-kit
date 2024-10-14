@@ -1,6 +1,10 @@
 import "@repo/ui/globals.css";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Inter } from "next/font/google";
+import { Web3Provider } from "~/modules/blockchain";
+import { getConfig } from "~/modules/blockchain";
+import { cookieToInitialState } from "wagmi";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +18,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }): JSX.Element {
+  const initialState = cookieToInitialState(
+    getConfig(),
+    headers().get("cookie"),
+  );
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Web3Provider initialState={initialState}>
+          <div vaul-drawer-wrapper="" className="bg-background">
+            {children}
+          </div>
+        </Web3Provider>
+      </body>
     </html>
   );
 }

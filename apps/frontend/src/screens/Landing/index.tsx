@@ -3,6 +3,7 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { Button, buttonVariants } from "@repo/ui/components/ui/button";
 import { HeroCards } from "./components/HeroCards";
 
+import { ConnectWalletButton } from "~/modules/blockchain";
 const Hero = () => {
   return (
     <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
@@ -30,7 +31,7 @@ const Hero = () => {
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
           <Button className="w-full md:w-1/3">Get Started</Button>
-
+          <ConnectWalletButton />
           <a
             rel="noreferrer noopener"
             href="https://github.com/leoMirandaa/shadcn-landing-page.git"
