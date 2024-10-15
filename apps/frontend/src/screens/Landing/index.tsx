@@ -3,6 +3,7 @@
 import { Button } from "@repo/ui/components/ui/button";
 import { HeroCards } from "./components/HeroCards";
 import Link from "next/link";
+import VerifyButton from "~/modules/authentication/components/verify-button";
 
 const Hero = () => {
   return (
@@ -30,6 +31,7 @@ const Hero = () => {
         </p>
 
         <div className="space-y-4 space-x-2 md:space-y-0 md:space-x-4">
+          <VerifyButton />
           <Button
             variant="default"
             size="lg"
