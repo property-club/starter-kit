@@ -1,9 +1,9 @@
 "use client";
 
-import { Button } from "@repo/ui/components/ui/button";
 import { HeroCards } from "./components/HeroCards";
-import Link from "next/link";
-import VerifyButton from "~/modules/authentication/components/verify-button";
+
+import { ConnectWalletButton } from "~/modules/wallet";
+import SignInButton from "~/modules/authentication/components/SignInButton";
 
 const Hero = () => {
   return (
@@ -31,21 +31,8 @@ const Hero = () => {
         </p>
 
         <div className="space-y-4 space-x-2 md:space-y-0 md:space-x-4">
-          <VerifyButton />
-          <Button
-            variant="default"
-            size="lg"
-            onClick={() => {
-              /* Add sign-up logic here */
-            }}
-          >
-            Sign Up
-          </Button>
-          <Link href="/dashboard" passHref>
-            <Button size="lg" variant="outline">
-              Sign In
-            </Button>
-          </Link>
+          {/* <ConnectWalletButton /> */}
+          <SignInButton size="lg" />
         </div>
       </div>
 
